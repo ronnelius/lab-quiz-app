@@ -1,13 +1,13 @@
-import dns from "node:dns/promises"; 
-// Force DNS servers (Cloudflare + Google) 
-dns.setServers(["1.1.1.1", "8.8.8.8"]);
-
-
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
+dotenv.config(); // load .env variables
 
-export const connectDB = async() => { 
-    await mongoose.connect('mongodb+srv://mesiaronnel_db_user:labquizapp@cluster0.0ef4azm.mongodb.net/LaboratoryQuizApp?retryWrites=true&w=majority')
-    .then(()=> {console.log('DB Connected')})   
-    console.log('DB Connected to', mongoose.connection.name);
-}
+export const connectDB = async () => {
+  try {
+    await mongoose.connect(process.env.MONGO_URI);
+    console.log("DB Connected to", mongoose.connection.name);
+  } catch (error) {
+    console.error("DB connection failed:", error.message);
+  }
+};
