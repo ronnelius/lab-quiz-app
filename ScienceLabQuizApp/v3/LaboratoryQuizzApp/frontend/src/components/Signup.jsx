@@ -36,7 +36,7 @@ const Signup = ({ onSignupSuccess = null }) => {
     return e;
   };
 
-    const API_BASE = import.meta.env.VITE_API_URL;
+    const API_BASE = 'https://lab-quiz-app.onrender.com';
     const handleSubmit = async (ev) => {
         ev.preventDefault();
         setSubmitError("");
