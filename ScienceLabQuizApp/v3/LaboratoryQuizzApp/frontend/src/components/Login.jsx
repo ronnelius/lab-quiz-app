@@ -19,7 +19,7 @@ const Login = ({onLoginSuccess = null}) => {
     const [loading, setLoading] = useState(false);
     const [submitError, setSubmitError] = useState("");
 
-    const API_BASE = 'http://localhost:4000';
+    const API_BASE = 'https://lab-quiz-app.onrender.com';
     const handleSubmit = async (ev) => {
         ev.preventDefault();
         setSubmitError("");
@@ -29,7 +29,7 @@ const Login = ({onLoginSuccess = null}) => {
         setLoading(true);
         try {
             const payload = {email: email.trim().toLowerCase(), password};
-            const resp = await fetch(`${import.meta.env.VITE_API_URL}/api/auth/login`, {
+            const resp = await fetch(`${API_BASE}/api/auth/login`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify(payload),
