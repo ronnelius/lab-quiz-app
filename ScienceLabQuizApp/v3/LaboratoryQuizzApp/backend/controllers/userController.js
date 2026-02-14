@@ -99,7 +99,7 @@ export async function login(req, res) {
             message: 'Login Successful!',
             token,
             user: {id:user._id.toString(), name: user.name, email: user.email}
-              console.log('Login request body:', req.body);
+   
         });
 
     } catch (err) {
