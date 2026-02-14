@@ -2,7 +2,7 @@ import React, { use } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './components/Login'
-import Signup from  './components/SignUp'
+import Signup from  './components/Signup'
 import MyResult from './components/MyResult'
 import MyResultPage from './pages/MyResultPage'
 import { Navigate, useLocation } from 'react-router-dom';
