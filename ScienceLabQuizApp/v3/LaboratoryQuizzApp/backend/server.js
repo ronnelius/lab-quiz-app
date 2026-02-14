@@ -7,7 +7,7 @@ import resultRouter from './routes/resultRoutes.js';
 
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 //middleware
 app.use(cors());
@@ -28,6 +28,7 @@ app.get('/', (req, res)=>{
     res.send('API WORKING');
 });
 
-app.listen(port,()=>{
-    console.log(`Server Started on http://localhost:${port}`)
-})
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});
