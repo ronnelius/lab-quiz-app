@@ -7,7 +7,7 @@ import {toast} from 'react-toastify';
 import axios from 'axios';
 
 
-    const API_BASE = import.meta.env.VITE_API_URL;
+    const API_BASE = 'https://lab-quiz-app.onrender.com';
 
 const Sidebar = () => {
   const [selectedTech, setSelectedTech] = useState(null); 
