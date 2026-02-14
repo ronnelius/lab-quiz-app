@@ -11,7 +11,9 @@ const port = process.env.PORT || 4000;
 
 //middleware
 app.use(cors({
-    origin: 'https://laboratory-quiz-app.onrender.com'
+    origin: 'https://laboratory-quiz-app.onrender.com',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true, 
     }));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
